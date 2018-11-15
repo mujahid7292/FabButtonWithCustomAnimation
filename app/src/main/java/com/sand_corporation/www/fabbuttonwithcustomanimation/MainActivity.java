@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FloatingActionButton fab_main, fab_chat, fab_mail, fab_call;
+    private FloatingActionButton fab_main;
+    private LinearLayout fab_chat, fab_mail, fab_call;
     private Animation fab_open,fab_close,fab_rotate_clock_wise,
             fab_rotate_anti_clock_wise;
 
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         fab_main = findViewById(R.id.fab_main);
         fab_chat = findViewById(R.id.fab_chat);
@@ -60,6 +63,30 @@ public class MainActivity extends AppCompatActivity {
 
                     is_open =true;
                 }
+            }
+        });
+
+        fab_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Chat Button Clicked",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        fab_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Call Button Clicked",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        fab_mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Mail Button Clicked",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
